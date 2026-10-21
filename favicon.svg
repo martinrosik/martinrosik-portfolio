@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <path id="m" d="M97 359V145H150L152 172C160 150 184 138 212 138C242 138 266 152 272 173C280 152 302 138 330 138C376 138 402 166 402 212V359H348V230C348 204 334 187 313 187C292 187 278 204 278 230V359H222V230C222 204 208 187 188 187C168 187 154 204 154 230V359Z" />
+    <clipPath id="m-clip"><use href="#m" /></clipPath>
+  </defs>
+  <rect width="500" height="500" rx="60" fill="#0c0d11" />
+  <rect x="321" y="59" width="164" height="163" fill="#83d5fb" />
+  <circle cx="88" cy="360" r="56" fill="#353d48" />
+  <rect x="250" y="285" width="130" height="131" fill="#3c3d41" />
+  <use href="#m" fill="#f3f0e9" />
+  <g clip-path="url(#m-clip)">
+    <rect x="321" y="59" width="164" height="163" fill="#f8fcff" />
+    <circle cx="88" cy="360" r="56" fill="#e2dedd" />
+    <rect x="250" y="285" width="130" height="131" fill="#bbb7ac" />
+  </g>
+</svg>
