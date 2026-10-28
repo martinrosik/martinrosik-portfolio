@@ -32,7 +32,7 @@ body {
 .profile > :nth-child(6) { animation-delay: 440ms; }
 .profile > :nth-child(7) { animation-delay: 520ms; }
 .profile > :nth-child(8) { animation-delay: 600ms; }
-h1 { margin: 0 0 1.75rem; color: var(--paper); font-size: clamp(2.5rem, 10vw, 3.75rem); line-height: 1.05; letter-spacing: -0.05em; font-weight: 700; }
+h1 { margin: 0 0 4.0625rem; color: var(--paper); font-size: clamp(2.875rem, 11.5vw, 4.25rem); line-height: 1.05; letter-spacing: -0.05em; font-weight: 700; }
 h1 em { position: relative; display: inline-block; font-family: 'Instrument Serif', serif; font-size: 1.15em; font-weight: 400; letter-spacing: -0.01em; }
 p { margin: 0 0 1.25rem; }
 

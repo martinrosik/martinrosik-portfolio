@@ -1,3 +1,6 @@
+// Always open at the top: restoring the scroll position on reload lands 16px down,
+// because it races the entrance animation's translateY(16px)
+history.scrollRestoration = "manual";
 document.documentElement.classList.add("js");
 document.getElementById("year").textContent = new Date().getFullYear();
 const credit = document.querySelector(".credit");
