@@ -3,10 +3,15 @@ document.getElementById("year").textContent = new Date().getFullYear();
 const credit = document.querySelector(".credit");
 const info = credit.querySelector(".info");
 const tip = credit.querySelector(".tip");
+const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
 const setNote = (open) => {
   credit.classList.toggle("open", open);
   info.setAttribute("aria-expanded", open);
-  if (open) tip.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  if (open)
+    tip.scrollIntoView({
+      block: "nearest",
+      behavior: reducedMotion.matches ? "auto" : "smooth",
+    });
 };
 info.addEventListener("click", () =>
   setNote(!credit.classList.contains("open")),
