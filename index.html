@@ -32,7 +32,7 @@
       </h1>
 
       <p>
-        I'm a full-stack software developer interested in computer vision,
+        I am a full-stack software developer interested in computer vision,
         machine learning, and cybersecurity. I build reliable web applications
         and software products, primarily with
         <a href="https://react.dev/" target="_blank" rel="noreferrer">React</a>
@@ -42,10 +42,10 @@
       </p>
 
       <p>
-        I'm currently pursuing a Master's degree in Computer Science at
+        Currently pursuing a Master's degree in Computer Science at
         <a href="https://www.fpvai.ukf.sk/" target="_blank" rel="noreferrer"
           >UKF FPVaI in Nitra</a
-        >. My
+        >. The
         <span class="circled annotate"
           >diploma thesis<svg
             class="squiggle"
@@ -58,26 +58,26 @@
               pathLength="1"
             /></svg
         ></span>
-        focuses on security analysis and detection of advanced mobile malware
-        using machine learning.
+        focuses on the detection of modified and obfuscated malicious Android
+        applications through penetration testing and machine learning.
       </p>
 
       <p>
-        My interest in programming started in high school, when I built my
-        <span class="mark annotate">first simple HTML website</span> about rock
-        music. That's when I realized
+        Interest in programming started in high school, when I built my first
+        simple HTML website about rock music. That's when I realized coding
+        makes me feel like a kid again on a playground, with so much to explore,
+        always something new to learn and improve. Over time, that early
+        curiosity grew into a deep commitment to
         <span class="mark annotate"
-          >coding makes me feel like a kid again on a playground</span
-        >, with so much to explore, always something new to learn and improve.
-        Over time, that early curiosity grew into a deep commitment to software
-        engineering, machine learning, and cybersecurity.
+          >software engineering, machine learning, and cybersecurity</span
+        >.
       </p>
 
       <p>
         My go-to languages are Java, Python, TypeScript. On the frontend, I also
-        use Vue.js, Tailwind CSS, and shadcn/ui. On the backend, I have experience
-        working with Laravel, MySQL, and MongoDB. In my daily work, I mainly use
-        tools like Docker, Git, VS Code, PowerShell, pnpm, Postman, and Bash.
+        use Vue.js, Tailwind CSS, and shadcn/ui. On the backend, I have
+        experience working with Laravel, MySQL, and MongoDB. In my daily work, I
+        mainly use tools like Docker, Git, Linux, pnpm, VS Code, and Postman.
       </p>
 
       <p>
@@ -106,22 +106,11 @@
       </p>
 
       <p>
-        <span class="wiggle annotate"
-          >I'm based in Slovakia<svg
-            class="squiggle"
-            viewBox="0 0 200 24"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M3 14 C 18 4, 30 4, 44 13 S 70 22, 86 12 S 112 2, 128 12 S 156 21, 172 11 S 192 5, 197 9"
-              pathLength="1"
-            /></svg></span
-        >. Outside of tech, I love spending time with my fiancée, enjoying being
-        out in nature, whether walking or cycling. I love art (<em
-          >Salvador Dalí, Keith Haring & Olaolu Slawn</em
-        >) are some of my favorite artists. I also enjoy metal & jazz music,
-        movies, sci-fi books, good coffee, and Japanese food.
+        I am based in Slovakia. Outside of tech, I love spending time with my
+        fiancée, enjoying being out in nature, whether walking or cycling. I
+        love art (<em>Salvador Dalí, Keith Haring & Olaolu Slawn</em>) are some
+        of my favorite artists. I also enjoy rock & jazz music, movies, sci-fi
+        books, good coffee, and Japanese food.
       </p>
 
       <footer class="credit">
@@ -135,21 +124,41 @@
           type="button"
           aria-label="Why this style"
           aria-describedby="credit-note"
+          aria-expanded="false"
         >
           i
         </button>
         <span class="tip" role="tooltip" id="credit-note">
-          I wanted to create something simple and on point, because I like
-          things clean and well structured. That's why I was inspired by Evan
-          You's personal website, which is simple and straightforward. This
-          style of portfolio, or “personal web”, is the best reflection of my
-          personality in the tech industry.
+          I wanted to create something simple and to the point, because I like
+          things clean and well-structured. That's why I was inspired by Evan
+          You's personal website. This simple and straightforward style of
+          portfolio best reflects my personality in the tech industry.
         </span>
       </footer>
     </main>
     <script>
       document.documentElement.classList.add("js");
       document.getElementById("year").textContent = new Date().getFullYear();
+      const credit = document.querySelector(".credit");
+      const info = credit.querySelector(".info");
+      const setNote = (open) => {
+        credit.classList.toggle("open", open);
+        info.setAttribute("aria-expanded", open);
+        if (open)
+          credit
+            .querySelector(".tip")
+            .scrollIntoView({ block: "nearest", behavior: "smooth" });
+      };
+      info.addEventListener("click", () =>
+        setNote(!credit.classList.contains("open")),
+      );
+      // pointerdown, since iOS Safari doesn't fire click on non-interactive elements
+      document.addEventListener("pointerdown", (e) => {
+        if (!credit.contains(e.target)) setNote(false);
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") setNote(false);
+      });
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
