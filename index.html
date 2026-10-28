@@ -141,20 +141,18 @@
       document.getElementById("year").textContent = new Date().getFullYear();
       const credit = document.querySelector(".credit");
       const info = credit.querySelector(".info");
+      const tip = credit.querySelector(".tip");
       const setNote = (open) => {
         credit.classList.toggle("open", open);
         info.setAttribute("aria-expanded", open);
-        if (open)
-          credit
-            .querySelector(".tip")
-            .scrollIntoView({ block: "nearest", behavior: "smooth" });
+        if (open) tip.scrollIntoView({ block: "nearest", behavior: "smooth" });
       };
       info.addEventListener("click", () =>
         setNote(!credit.classList.contains("open")),
       );
       // pointerdown, since iOS Safari doesn't fire click on non-interactive elements
       document.addEventListener("pointerdown", (e) => {
-        if (!credit.contains(e.target)) setNote(false);
+        if (!tip.contains(e.target) && !info.contains(e.target)) setNote(false);
       });
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") setNote(false);
